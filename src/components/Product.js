@@ -1,7 +1,7 @@
 import React from 'react'
 
 export const Product = (props) => {
-  const { product } = props
+  const { product, onAdd } = props
 
   return (
     <div>
@@ -9,7 +9,7 @@ export const Product = (props) => {
       <h3>{product.name}</h3>
       <div>${product.price}</div>
       <div>
-        <button>Add To Cart</button>
+        <button onClick={onAdd}>Add To Cart</button>
       </div>
     </div>
   )
