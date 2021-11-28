@@ -1,0 +1,39 @@
+body {
+  text-align: center;
+}
+
+.cart-wrapper {
+  height: 100px;
+  width: 500px;
+  border: 1px solid #ccc;
+  margin: auto;
+}
+
+.btn-wrapper button {
+  background-color: red;
+  border: 0px;
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+  box-shadow: #333 0px 1px 5px;
+}
+
+.img-wrapper img {
+  width: 100px;
+  height: 100px;
+  margin-top: -20px;
+}
+
+.item {
+  float: left;
+  width: 120px;
+  padding: 20px;
+}
+
+.add-to-cart img {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  right: 15%;
+  top: 10%;
+}
