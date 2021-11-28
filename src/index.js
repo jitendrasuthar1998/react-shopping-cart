@@ -5,10 +5,19 @@ import ReactDOM from 'react-dom'
 import reportWebVitals from './reportWebVitals'
 import IndexApp from './Redux/IndexApp'
 
+import rootReducer from './Redux/Services/Reducers/rootReducer'
+
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
+
+const store = createStore(rootReducer)
+
+console.log('store data is == ', store)
+
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <IndexApp />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root')
 )
 

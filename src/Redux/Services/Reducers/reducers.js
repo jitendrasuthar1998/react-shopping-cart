@@ -5,13 +5,14 @@ const initialState = {
 }
 
 export const cartItems = (state = initialState, action) => {
+  console.log('initialState is == ', initialState)
   switch (action.type) {
     case ADD_TO_CART:
+      console.log('reducer == ', action)
       return {
         ...state,
         cartData: action.data,
       }
-      break
 
     default:
       return state
