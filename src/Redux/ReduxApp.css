@@ -34,6 +34,22 @@ body {
   width: 100px;
   height: 100px;
   position: absolute;
-  right: 15%;
-  top: 10%;
+  right: 10%;
+  top: 1%;
+}
+
+.cart-count {
+  position: absolute;
+  right: 9%;
+  top: 10px;
+  z-index: 1;
+  background-color: red;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  color: #fff;
+  /* text-align: center;
+  justify-content: center;
+  align-items: center; */
+  padding: 7px;
 }
