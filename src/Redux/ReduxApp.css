@@ -12,22 +12,25 @@ body {
 .btn-wrapper button {
   background-color: red;
   border: 0px;
-  padding: 10px;
+  height: 40px;
+  width: 150px;
+  padding: 5px;
   border-radius: 5px;
   color: white;
   box-shadow: #333 0px 1px 5px;
 }
 
 .img-wrapper img {
-  width: 100px;
-  height: 100px;
-  margin-top: -20px;
+  width: 90px;
+  height: 90px;
+  margin-top: -10px;
 }
 
 .item {
   float: left;
   width: 120px;
-  padding: 20px;
+  padding: 16px;
+  /* border: solid black; */
 }
 
 .add-to-cart img {
@@ -52,4 +55,9 @@ body {
   justify-content: center;
   align-items: center; */
   padding: 7px;
+}
+
+button.remove-cart-btn {
+  background-color: rebeccapurple;
+  margin-top: 8px;
 }

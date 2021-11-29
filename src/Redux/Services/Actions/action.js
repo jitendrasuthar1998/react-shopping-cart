@@ -8,9 +8,9 @@ export const addToCart = (data) => {
   }
 }
 
-// export const removeToCart = (data) => {
-//   return {
-//     type: 'REMOVE_FROM_CART',
-//     data: data,
-//   }
-// }
+export const removeToCart = () => {
+  console.log('removeToCartHandler action called')
+  return {
+    type: 'REMOVE_FROM_CART',
+  }
+}
