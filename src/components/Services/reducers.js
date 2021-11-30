@@ -1,4 +1,4 @@
-import { ADD_TO_CART, REMOVE_FROM_CART } from '../Constants/constants'
+import { ADD_TO_CART, GET_STORE_DETAILS, REMOVE_FROM_CART } from './constants'
 
 export const cartItems = (state = { cartItems: [] }, action) => {
   // console.log('initialState is == ', initialState)
@@ -28,26 +28,42 @@ export const cartItems = (state = { cartItems: [] }, action) => {
       }
 
     case REMOVE_FROM_CART:
-      const product = action.payload
-      const exist = state.cartItems.find((x) => x.name === product.name)
-      if (exist.qty === 1) {
+      const checkProduct = action.payload
+      const existItem = state.cartItems.find(
+        (x) => x.name === checkProduct.name
+      )
+      if (existItem.qty === 1) {
         return {
           ...state,
-          cartItems: state.cartItems.filter((x) => x.id !== product.name),
+          cartItems: state.cartItems.filter(
+            (x) => x.name !== checkProduct.name
+          ),
         }
       } else {
         return {
           ...state,
           cartItems: state.cartItems.map((x) =>
-            x.name === product.name
+            x.name === checkProduct.name
               ? {
-                  ...exist,
-                  qty: exist.qty - 1,
+                  ...existItem,
+                  qty: existItem.qty - 1,
                 }
               : x
           ),
         }
       }
+
+    default:
+      return state
+  }
+}
+
+export const storeDetailsReducer = (state = {}, action) => {
+  switch (action.type) {
+    case GET_STORE_DETAILS:
+      // const item = action.payload
+
+      return action.payload
 
     default:
       return state

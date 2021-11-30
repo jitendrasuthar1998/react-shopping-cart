@@ -1,22 +1,36 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-// import './index.css'
-// import App from './App'
+import './index.css'
+import App from './App'
 import reportWebVitals from './reportWebVitals'
 import IndexApp from './Redux/IndexApp'
 
-import rootReducer from './Redux/Services/Reducers/rootReducer'
-
-import { createStore } from 'redux'
+import { createStore, compose, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
+import thunk from 'redux-thunk'
+import shoppingCartRootReducer from './components/Services/shoppingCartRootReducer'
 
-const store = createStore(rootReducer)
+const initialState = {
+  cart: {
+    cartItems: [],
+  },
+}
 
-console.log('store data is == ', store)
+console.log('initialState of store is == ', initialState)
+
+const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+
+const store = createStore(
+  shoppingCartRootReducer,
+  initialState,
+  composeEnhancer(applyMiddleware(thunk))
+)
+
+// console.log('store data is == ', store)
 
 ReactDOM.render(
   <Provider store={store}>
-    <IndexApp />
+    <App />
   </Provider>,
   document.getElementById('root')
 )
